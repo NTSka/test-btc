@@ -13,13 +13,13 @@ import (
 )
 
 func main() {
-	private := "cSkpFYNLFwxMiMeKBfRKEwWaUeCKiQN2cUSjFkEvx1Qdsrn87GnF"
-	fromAddress := "mjW3bCJMBZQrPPTHgUA2JhHAHEG8Ahuzor"
+	private := "cPQrREyy7VB5hjuZizRVjseRiHtsEt4q27BwwzHsdmN7hNqkQwXp"
+	fromAddress := "mnansJbr3BFvfrW3TqhnygvTvYFQzHC4FF"
 	toAddress := "msZJAsyxmmuxCLF58zSfa8R1XyHhQFG17Y"
 	//
 	api := cryptoapis.NewAPIClient("testnet", "2a454e24881ca117ca2201462c1e18691a15f9a5")
 
-	rawTx, err := api.GetTransaction(context.Background(), fromAddress, toAddress, 1699000/1e8, 1000/1e8)
+	rawTx, err := api.GetTransaction(context.Background(), fromAddress, toAddress, 1698000/1e8, 1000/1e8)
 	if err != nil {
 		fmt.Println("ERROR")
 		fmt.Println(err)
@@ -125,85 +125,6 @@ func main() {
 	}
 
 	fmt.Println(tx)
-	//sourceTxHash := sourceTx.TxHash()
-	//redeemTx := wire.NewMsgTx(wire.TxVersion)
-	//prevOut := wire.NewOutPoint(&sourceTxHash, 0)
-	//redeemTxIn := wire.NewTxIn(prevOut, nil, nil)
-	//redeemTx.AddTxIn(redeemTxIn)
-	//redeemTxOut := wire.NewTxOut(amount, destinationPkScript)
-	//redeemTx.AddTxOut(redeemTxOut)
-	//sigScript, err := txscript.SignatureScript(redeemTx, 0, sourceTx.TxOut[0].PkScript, txscript.SigHashAll, wif.PrivKey, false)
-	//if err != nil {
-	//	return Transaction{}, err
-	//}
-	//redeemTx.TxIn[0].SignatureScript = sigScript
-	//flags := txscript.StandardVerifyFlags
-	//vm, err := txscript.NewEngine(sourceTx.TxOut[0].PkScript, redeemTx, 0, flags, nil, nil, amount)
-	//if err != nil {
-	//	return Transaction{}, err
-	//}
-	//if err := vm.Execute(); err != nil {
-	//	return Transaction{}, err
-	//}
-	//var unsignedTx bytes.Buffer
-	//var signedTx bytes.Buffer
-	//sourceTx.Serialize(&unsignedTx)
-	//redeemTx.Serialize(&signedTx)
-
-	//
-
-	////
-	////addresspubkey, _ := btcutil.NewAddressPubKey(wif.PrivKey.PubKey().SerializeUncompressed(), &chaincfg.MainNetParams)
-	////fmt.Println(addresspubkey)
-	//////
-	////
-	//sigScript, err := txscript.SignatureScript(sourceTx, 0, sourceTx.TxOut[0].PkScript, txscript.SigHashAll, wif.PrivKey, false)
-	//if err != nil {
-	//	fmt.Println("ERROR")
-	//	fmt.Println(err)
-	//	return
-	//}
-	//
-	//sourceTx.TxIn[0].SignatureScript = sigScript
-	//flags := txscript.StandardVerifyFlags
-	//vm, err := txscript.NewEngine(sourceTx.TxOut[0].PkScript, sourceTx, 0, flags, nil, nil, sourceTx.TxOut[0].Value)
-	//if err != nil {
-	//	fmt.Println("ERR")
-	//	fmt.Println(err)
-	//	return
-	//}
-	//if err := vm.Execute(); err != nil {
-	//	fmt.Println("ERROR")
-	//	fmt.Println(err)
-	//	return
-	//}
-	//
-	//var signedTx bytes.Buffer
-	//
-	//if err := sourceTx.Serialize(&signedTx); err != nil {
-	//	fmt.Println("ERROR")
-	//	fmt.Println(err)
-	//	return
-	//}
-	//
-	//signedRaw := hex.EncodeToString(signedTx.Bytes())
-	//
-	//fmt.Println()
-	//fmt.Println(signedRaw)
-	//
-	//tx, err := api.SendSignedTransaction(context.Background(), signedRaw)
-	//if err != nil {
-	//	fmt.Println("ERROR")
-	//	fmt.Println(err)
-	//	return
-	//}
-	//
-	//
-	//fmt.Println(tx)
-
-	//fmt.Println(wif)
-	//fmt.Println(address)
-	//fmt.Println(address.String())
 
 }
 

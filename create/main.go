@@ -24,6 +24,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	fmt.Println(wif.String())
 	fmt.Println(address.EncodeAddress())
 }
 
